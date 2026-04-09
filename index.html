@@ -2,97 +2,148 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>II Digest - PiterstoryTeam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ИИ раз, ИИ два — PiterstoryTeam</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
-:root{--bg:#0a0a0f;--sf:#12121a;--br:#2a2a3d;--g:#00ff88;--pk:#ff006e;--bl:#00cfff;--yw:#ffcc00;--tx:#e0e0f0;--mt:#6060a0}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--tx);font-family:'VT323',monospace;font-size:18px;line-height:1.5;min-height:100vh}
-.sc{position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.07) 2px,rgba(0,0,0,.07) 4px);pointer-events:none;z-index:999}
-.wr{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
-.hd{text-align:center;padding:2.5rem 0 1.5rem}
-.tm{font-family:'Press Start 2P',monospace;font-size:clamp(8px,1.8vw,12px);color:var(--mt);letter-spacing:6px;margin-bottom:1rem}
-.tt{font-family:'Press Start 2P',monospace;font-size:clamp(12px,2.8vw,20px);color:var(--g);text-shadow:0 0 20px rgba(0,255,136,.4),3px 3px 0 #006633;line-height:1.7;letter-spacing:2px}
-.sb{font-family:'Press Start 2P',monospace;font-size:clamp(7px,1.2vw,9px);color:var(--bl);margin-top:1rem;letter-spacing:3px;opacity:.75}
-.bk{animation:blink 1.2s step-end infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.dv{height:4px;background:repeating-linear-gradient(90deg,var(--g) 0,var(--g) 8px,transparent 8px,transparent 16px);margin:1.5rem 0;opacity:.4}
-.bg{display:inline-block;font-family:'Press Start 2P',monospace;font-size:8px;background:var(--pk);color:#fff;padding:6px 14px;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));margin-bottom:1.5rem}
-.ss{background:var(--sf);border:1px solid var(--br);padding:1rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap}
-.st{text-align:center;flex:1;min-width:80px}
-.sn{font-family:'Press Start 2P',monospace;font-size:18px;color:var(--yw);display:block}
-.sl{font-size:14px;color:var(--mt);margin-top:4px}
-.hl{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--yw);margin:2rem 0 1rem;display:flex;align-items:center;gap:10px}
-.hl::before{content:"\25BA"}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-bottom:2rem}
-.pc{background:var(--sf);border:1px solid var(--br);padding:1.25rem}
-.pc.liza{border-top:3px solid var(--pk)}.pc.ilya{border-top:3px solid var(--bl)}
-.pt{display:flex;align-items:center;gap:14px;margin-bottom:1rem}
-.cw{width:56px;height:56px;flex-shrink:0;border:1px solid var(--br);display:flex;align-items:center;justify-content:center}
-.pc.liza .cw{border-color:rgba(255,0,110,.4);background:rgba(255,0,110,.06)}
-.pc.ilya .cw{border-color:rgba(0,207,255,.4);background:rgba(0,207,255,.06)}
-.pn{font-family:'Press Start 2P',monospace;font-size:10px;margin-bottom:4px}
-.pc.liza .pn{color:var(--pk)}.pc.ilya .pn{color:var(--bl)}
-.pt2{font-size:14px;color:var(--mt);margin-bottom:6px}
-.pl{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--yw);background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.25);padding:3px 7px;display:inline-block}
-.xw{margin:10px 0}.xl{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--mt);display:flex;justify-content:space-between;margin-bottom:4px}
-.xb{height:6px;background:var(--br)}.xf{height:100%;animation:xg 1.2s ease-out forwards}
-.pc.liza .xf{background:var(--pk)}.pc.ilya .xf{background:var(--bl)}
-@keyframes xg{from{width:0}}
-.lb{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--mt);cursor:pointer;border:1px solid var(--br);background:none;padding:5px 10px;margin-top:6px;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center}
-.lb:hover{color:var(--tx);border-color:var(--mt)}
-.lg{display:none;margin-top:8px;border-top:1px solid var(--br);padding-top:10px}.lg.op{display:block}
-.lr{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:14px}
-.lk{font-family:'Press Start 2P',monospace;font-size:7px;min-width:58px;padding:2px 5px;text-align:center;flex-shrink:0}
-.pc.liza .lk{background:rgba(255,0,110,.12);color:var(--pk)}.pc.ilya .lk{background:rgba(0,207,255,.12);color:var(--bl)}
-.lv{color:var(--tx);opacity:.8;line-height:1.35}
-.ds{background:var(--sf);border:1px solid var(--br);padding:1.25rem 1.5rem;margin-bottom:1.25rem;transition:border-color .2s}
-.ds:hover{border-color:var(--mt)}
-.dh{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--br)}
-.di{width:40px;height:40px;border:2px solid;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.ds.liza .di{border-color:var(--pk);background:rgba(255,0,110,.1)}.ds.ilya .di{border-color:var(--bl);background:rgba(0,207,255,.1)}
-.dn{font-family:'Press Start 2P',monospace;font-size:9px;color:var(--tx)}.dr{font-size:13px;color:var(--mt);margin-top:2px}
-.ac{display:flex;flex-direction:column;gap:8px}
-.ah{background:var(--bg);border-left:3px solid;padding:.7rem .9rem}
-.ds.liza .ah{border-color:var(--pk)}.ds.ilya .ah{border-color:var(--bl)}
-.at{font-family:'Press Start 2P',monospace;font-size:8px;margin-bottom:5px;line-height:1.7}
-.ds.liza .at{color:var(--pk)}.ds.ilya .at{color:var(--bl)}
-.ad{font-size:16px;color:var(--tx);opacity:.85;line-height:1.4}
-.xt{display:inline-block;font-family:'Press Start 2P',monospace;font-size:7px;background:var(--yw);color:#000;padding:3px 8px;margin-top:6px}
-.al{display:flex;flex-direction:column;gap:6px}
-.ai{background:var(--sf);border:1px solid var(--br);padding:.7rem 1rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:border-color .15s}
-.ai:hover{border-color:var(--yw)}
-.an{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--mt)}
-.ag{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--yw)}
-.ab{display:none;background:var(--bg);border:1px solid var(--br);border-top:none;padding:1rem}.ab.op{display:block}
-.ae{margin-bottom:1rem}
-.aw{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--mt);margin-bottom:6px}
-.aa{border-left:2px solid var(--br);padding:5px 10px;margin-bottom:5px}
-.ak{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--bl);margin-bottom:3px}
-.av{font-size:14px;color:var(--tx);opacity:.65}
-.ft{text-align:center;padding:2rem 0;color:var(--mt);font-size:14px;border-top:1px solid var(--br);margin-top:2.5rem}
-.ft span{color:var(--g)}
-@media(max-width:600px){.ss{gap:1rem}.ds{padding:1rem}.pg{grid-template-columns:1fr}}
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+  :root{--bg:#0a0a0f;--surface:#12121a;--border:#2a2a3d;--g:#00ff88;--pink:#ff006e;--blue:#00cfff;--yellow:#ffcc00;--text:#e0e0f0;--muted:#6060a0;--lena:#a855f7}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'VT323',monospace;font-size:18px;line-height:1.5;min-height:100vh}
+  .scanlines{position:fixed;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.07) 2px,rgba(0,0,0,0.07) 4px);pointer-events:none;z-index:999}
+  .wrap{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+  .hdr{text-align:center;padding:2.5rem 0 1.5rem}
+  .team{font-family:'Press Start 2P',monospace;font-size:clamp(8px,1.8vw,12px);color:var(--muted);letter-spacing:6px;margin-bottom:1rem}
+  .title{font-family:'Press Start 2P',monospace;font-size:clamp(12px,2.8vw,20px);color:var(--g);text-shadow:0 0 20px rgba(0,255,136,0.4),3px 3px 0 #006633;line-height:1.7;letter-spacing:2px}
+  .sub{font-family:'Press Start 2P',monospace;font-size:clamp(7px,1.2vw,9px);color:var(--blue);margin-top:1rem;letter-spacing:3px;opacity:.75}
+  .blink{animation:blink 1.2s step-end infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .divider{height:4px;background:repeating-linear-gradient(90deg,var(--g) 0,var(--g) 8px,transparent 8px,transparent 16px);margin:1.5rem 0;opacity:.4}
+  .badge{display:inline-block;font-family:'Press Start 2P',monospace;font-size:8px;background:var(--pink);color:#fff;padding:6px 14px;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));margin-bottom:1.5rem}
+  .stats{background:var(--surface);border:1px solid var(--border);padding:1rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+  .stat{text-align:center;flex:1;min-width:80px}
+  .stat-n{font-family:'Press Start 2P',monospace;font-size:18px;color:var(--yellow);display:block}
+  .stat-l{font-size:14px;color:var(--muted);margin-top:4px}
+  .sec-title{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--yellow);margin:2rem 0 1rem;display:flex;align-items:center;gap:10px}
+  .sec-title::before{content:'\25BA'}
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-bottom:2rem}
+  .pcard{background:var(--surface);border:1px solid var(--border);padding:1.25rem}
+  .pcard.liza{border-top:3px solid var(--pink)}.pcard.ilya{border-top:3px solid var(--blue)}.pcard.lena{border-top:3px solid var(--lena)}
+  .ptop{display:flex;align-items:center;gap:14px;margin-bottom:1rem}
+  .char-wrap{width:56px;height:56px;flex-shrink:0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+  .pcard.liza .char-wrap{border-color:rgba(255,0,110,.4);background:rgba(255,0,110,.06)}
+  .pcard.ilya .char-wrap{border-color:rgba(0,207,255,.4);background:rgba(0,207,255,.06)}
+  .pcard.lena .char-wrap{border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.06)}
+  .pname{font-family:'Press Start 2P',monospace;font-size:10px;margin-bottom:4px}
+  .pcard.liza .pname{color:var(--pink)}.pcard.ilya .pname{color:var(--blue)}.pcard.lena .pname{color:var(--lena)}
+  .pteam{font-size:14px;color:var(--muted);margin-bottom:6px}
+  .pclass{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--yellow);background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.25);padding:3px 7px;display:inline-block}
+  .xp-wrap{margin:10px 0}
+  .xp-lbl{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px}
+  .xp-bar{height:6px;background:var(--border)}
+  .xp-fill{height:100%;animation:xpg 1.2s ease-out forwards}
+  .pcard.liza .xp-fill{background:var(--pink)}.pcard.ilya .xp-fill{background:var(--blue)}.pcard.lena .xp-fill{background:var(--lena)}
+  @keyframes xpg{from{width:0}}
+  .leg-btn{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--muted);cursor:pointer;border:1px solid var(--border);background:none;padding:5px 10px;margin-top:6px;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;transition:border-color .15s,color .15s}
+  .leg-btn:hover{color:var(--text);border-color:var(--muted)}
+  .leg-body{display:none;margin-top:8px;border-top:1px solid var(--border);padding-top:10px}
+  .leg-body.open{display:block}
+  .leg-row{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;font-size:14px}
+  .leg-key{font-family:'Press Start 2P',monospace;font-size:7px;min-width:58px;padding:2px 5px;text-align:center;flex-shrink:0}
+  .pcard.liza .leg-key{background:rgba(255,0,110,.12);color:var(--pink)}
+  .pcard.ilya .leg-key{background:rgba(0,207,255,.12);color:var(--blue)}
+  .pcard.lena .leg-key{background:rgba(168,85,247,.12);color:var(--lena)}
+  .leg-val{color:var(--text);opacity:.8;line-height:1.35}
+  .dsec{background:var(--surface);border:1px solid var(--border);padding:1.25rem 1.5rem;margin-bottom:1.25rem;transition:border-color .2s}
+  .dsec:hover{border-color:var(--muted)}
+  .dhdr{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+  .dicon{width:40px;height:40px;border:2px solid;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .dsec.liza .dicon{border-color:var(--pink);background:rgba(255,0,110,.1)}
+  .dsec.ilya .dicon{border-color:var(--blue);background:rgba(0,207,255,.1)}
+  .dsec.lena .dicon{border-color:var(--lena);background:rgba(168,85,247,.1)}
+  .dname{font-family:'Press Start 2P',monospace;font-size:9px;color:var(--text)}
+  .drole{font-size:13px;color:var(--muted);margin-top:2px}
+  .achs{display:flex;flex-direction:column;gap:8px}
+  .ach{background:var(--bg);border-left:3px solid;padding:.7rem .9rem}
+  .dsec.liza .ach{border-color:var(--pink)}.dsec.ilya .ach{border-color:var(--blue)}.dsec.lena .ach{border-color:var(--lena)}
+  .ach-t{font-family:'Press Start 2P',monospace;font-size:8px;margin-bottom:5px;line-height:1.7}
+  .dsec.liza .ach-t{color:var(--pink)}.dsec.ilya .ach-t{color:var(--blue)}.dsec.lena .ach-t{color:var(--lena)}
+  .ach-d{font-size:16px;color:var(--text);opacity:.85;line-height:1.4}
+  .xp-tag{display:inline-block;font-family:'Press Start 2P',monospace;font-size:7px;background:var(--yellow);color:#000;padding:3px 8px;margin-top:6px}
+  .arc-list{display:flex;flex-direction:column;gap:6px}
+  .arc-item{background:var(--surface);border:1px solid var(--border);padding:.7rem 1rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:border-color .15s}
+  .arc-item:hover{border-color:var(--yellow)}
+  .arc-lbl{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--muted)}
+  .arc-tag{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--yellow)}
+  .arc-body{display:none;background:var(--bg);border:1px solid var(--border);border-top:none;padding:1rem}
+  .arc-body.open{display:block}
+  .arc-entry{margin-bottom:1rem}
+  .arc-who{font-family:'Press Start 2P',monospace;font-size:8px;color:var(--muted);margin-bottom:6px}
+  .arc-ach{border-left:2px solid var(--border);padding:5px 10px;margin-bottom:5px}
+  .arc-ach-t{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--blue);margin-bottom:3px}
+  .arc-ach-d{font-size:14px;color:var(--text);opacity:.65}
+  .footer{text-align:center;padding:2rem 0;color:var(--muted);font-size:14px;border-top:1px solid var(--border);margin-top:2.5rem}
+  .footer span{color:var(--g)}
+  @media(max-width:600px){.stats{gap:1rem}.dsec{padding:1rem}.pgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="sc"></div>
-<div class="wr" id="app"><div style="text-align:center;padding:3rem 0;color:var(--mt);font-family:'Press Start 2P',monospace;font-size:10px">LOADING...</div></div>
+<div class="scanlines"></div>
+<div class="wrap" id="app">
+  <div style="text-align:center;padding:3rem 0;color:var(--muted);font-family:'Press Start 2P',monospace;font-size:10px">ЗАГРУЗКА...</div>
+</div>
 <script>
-var SP={liza:{px:["00022200","00222220","00244200","01111110","01141110","01111110","03333330","05550550"],p:{"1":"#f5c5a3","2":"#cc2255","3":"#ff006e","4":"#000","5":"#880033","0":null}},ilya:{px:["00222220","02244220","02211220","01111110","01141110","01111110","03350330","06600660"],p:{"1":"#e8d0a0","2":"#334466","3":"#00cfff","4":"#000","5":"#224466","6":"#001133","0":null}}};
-var LG={liza:[["CLASS","Master of Meanings"],["SKILL","~10 agents: copywriter, editor, linguist"],["FACTION","Small Orchestra"],["MOTTO","Text is meaning. The rest is automated."]],ilya:[["CLASS","Chief Mind of the Agency"],["SKILL","~70 agents: SEO, analytics, strategy, context"],["FACTION","Big Orchestra"],["MOTTO","If it repeats twice, it is already a script."]]};
-var IC={liza:"🔴",ilya:"🔵"};
-function ds(cv,px,pal){var ctx=cv.getContext("2d"),ps=6;ctx.clearRect(0,0,cv.width,cv.height);px.forEach(function(row,y){(row+"").split("").forEach(function(ch,x){var c=pal[ch];if(c){ctx.fillStyle=c;ctx.fillRect(x*ps,y*ps,ps,ps)}})});}
-function es(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-function mkLeg(id){return(LG[id]||[]).map(function(r){return'<div class="lr"><span class="lk">'+es(r[0])+'</span><span class="lv">'+es(r[1])+"</span></div>";}).join("");}
-function pc(p){return'<div class="pc '+es(p.id)+'"><div class="pt"><div class="cw"><canvas id="cv-'+es(p.id)+'" width="48" height="48" style="image-rendering:pixelated;display:block"></canvas></div><div><div class="pn">'+es(p.name)+'</div><div class="pt2">// '+es(p.team)+'</div><div class="pl">'+es(p.class)+"</div></div></div>"+ '<div class="xw"><div class="xl"><span>XP</span><span>LVL '+es(p.level)+"</span></div>"+ '<div class="xb"><div class="xf" style="width:'+es(p.xp)+'%"></div></div></div>'+ '<button class="lb" onclick="tl(this)"><span>Легенда</span><span>▼</span></button>'+ '<div class="lg">'+mkLeg(p.id)+"</div></div>";}
-function db(p){var achs=(p.achievements||[]).map(function(a){return'<div class="ah"><div class="at">'+es(a.title)+'</div><div class="ad">'+es(a.desc)+'</div>'+(a.xp?'<span class="xt">+'+es(a.xp)+" XP</span>":"")+"</div>";}).join("");return'<div class="ds '+es(p.id)+'"><div class="dh"><div class="di">'+(IC[p.id]||"?")+'</div><div><div class="dn">'+es(p.name)+'</div><div class="dr">// '+es(p.team)+"</div></div></div>"+ '<div class="ac">'+achs+"</div></div>";}
-function ai(w){var ents=(w.players||[]).map(function(p){var achs=(p.achievements||[]).map(function(a){return'<div class="aa"><div class="ak">'+es(a.title)+'</div><div class="av">'+es(a.desc)+"</div></div>";}).join("");return'<div class="ae"><div class="aw">'+(IC[p.id]||"?")+' '+es(p.name)+' // '+es(p.team)+"</div>"+achs+"</div>";}).join("");return'<div><div class="ai" onclick="ta(this)"><span class="an">ДАЙДЖЕСТ #'+es(w.number)+' · '+es(w.dates)+'</span><span class="ag">[ОТКРЫТЬ ▼]</span></div><div class="ab">'+ents+"</div></div>";}
-function render(data){var c=data.current;var h='<div class="hd"><div class="tm">PITERSTORY TEAM</div><div class="tt">'+es(data.title||"").replace(/\\n/g,"<br>").replace(/\n/g,"<br>")+'</div><div class="sb">// ЕЖЕНЕДЕЛЬНЫЙ ДАЙДЖЕСТ <span class="bk">_</span></div></div>';h+='<div class="dv"></div>';h+='<div style="text-align:center;margin-bottom:.5rem"><span class="bg">ДАЙДЖЕСТ #'+es(c.number)+' · '+es(c.dates)+"</span></div>";var lb=data.statLabels||["задач","сэкономлено","игрока","потенциал"];h+='<div class="ss"><div class="st"><span class="sn">'+es(c.stats.tasks)+'</span><div class="sl">'+es(lb[0])+"</div></div>";h+='<div class="st"><span class="sn">'+es(c.stats.saved)+'</span><div class="sl">'+es(lb[1])+"</div></div>";h+='<div class="st"><span class="sn">'+es(c.stats.players)+'</span><div class="sl">'+es(lb[2])+"</div></div>";h+='<div class="st"><span class="sn">'+es(c.stats.potential)+'</span><div class="sl">'+es(lb[3])+"</div></div></div>";h+='<div class="hl">ИГРОКИ</div>';h+='<div class="pg">'+c.players.map(pc).join("")+"</div>";h+='<div class="dv"></div>';h+=c.players.map(db).join("");h+='<div class="dv"></div>';h+='<div class="hl">АРХИВ</div>';h+='<div class="al">'+(data.archive||[]).map(ai).join("")+"</div>";h+='<div class="ft"><span>PITERSTORY TEAM</span> · ИИ РАЗ, ИИ ДВА<br><span style="color:var(--mt);font-size:13px">сделано с ♥ и нейросетями · 2025</span></div>';document.getElementById("app").innerHTML=h;c.players.forEach(function(p){var sp=SP[p.id];if(!sp)return;var cv=document.getElementById("cv-"+p.id);if(cv)ds(cv,sp.px,sp.p);});}
-function tl(btn){var b=btn.nextElementSibling,o=b.classList.toggle("op");btn.querySelector("span:last-child").textContent=o?"▲":"▼";}
-function ta(el){var b=el.nextElementSibling,o=b.classList.toggle("op");el.querySelector(".ag").textContent=o?"[ЗАКРЫТЬ ▲]":"[ОТКРЫТЬ ▼]";}
-fetch("data.json").then(function(r){return r.json();}).then(render).catch(function(e){document.getElementById("app").innerHTML='<div style="padding:2rem;color:#ff006e;font-family:monospace">ERROR: '+e+"</div>";});
+function drawSprite(canvas,pixels,palette){
+  const ctx=canvas.getContext('2d'),ps=6;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pixels.forEach((row,y)=>[...row].forEach((ch,x)=>{const c=palette[ch];if(c){ctx.fillStyle=c;ctx.fillRect(x*ps,y*ps,ps,ps)}}));
+}
+const SPRITES={
+  liza:{px:['00022200','00222220','00244200','01111110','01141110','01111110','03333330','05550550'],p:{'1':'#f5c5a3','2':'#cc2255','3':'#ff006e','4':'#000','5':'#880033','0':null}},
+  ilya:{px:['00222220','02244220','02211220','01111110','01141110','01111110','03350330','06600660'],p:{'1':'#e8d0a0','2':'#334466','3':'#00cfff','4':'#000','5':'#224466','6':'#001133','0':null}},
+  lena:{px:['00033300','00333330','00314300','01111110','01141110','01111110','02222220','05500550'],p:{'1':'#f5c5d0','2':'#7c3aed','3':'#a855f7','4':'#000','5':'#4c1d95','0':null}}
+};
+const LEGENDS={
+  liza:[['КЛАСС','Мастер смыслов — видит суть любого текста и превращает её в контент, который работает'],['СКИЛЛ','Автоматизация текстов и контента: сайты, блоги, соцсети. Армия из ~10 агентов — копирайтер, редактор, лингвист и другие'],['ФРАКЦИЯ','Малый оркестр — каждое слово на своём месте, каждый смысл выверен'],['ДЕВИЗ','«Текст — это не контент. Текст — это смысл. Остальное автоматизировано.»']],
+  ilya:[['КЛАСС','Главный разум агентства — смотрит на маркетинг системно, верит только цифрам и критическому мышлению'],['СКИЛЛ','Закрывает весь маркетинг армией из ~70 агентов: SEO, контекст, аналитика, стратегия и всё что между'],['ФРАКЦИЯ','Большой оркестр — полный охват, системный подход, никаких решений без данных'],['ДЕВИЗ','«Если нельзя измерить — не считается. Если можно автоматизировать — уже автоматизировано.»']],
+  lena:[['КЛАСС','Визуал-юниор — изучает как делать крутые визуалы с ИИ и автоматизировать всё что можно нарисовать'],['СКИЛЛ','Figma + AI-генерация: визуалы для сайта и соцсетей агентства без боли и без фрилансеров'],['ФРАКЦИЯ','Визуальный цех — красота в каждом пикселе, скорость в каждом дедлайне'],['ДЕВИЗ','«Раньше это занимало день. Теперь — промпт и кофе.»']]
+};
+const ICON={liza:'🔴',ilya:'🔵',lena:'🟣'};
+function toggleLeg(btn){const b=btn.nextElementSibling,o=b.classList.toggle('open');btn.querySelector('span:last-child').textContent=o?'▲':'▼';}
+function toggleArc(el){const b=el.nextElementSibling,o=b.classList.toggle('open');el.querySelector('.arc-tag').textContent=o?'[ЗАКРЫТЬ ▲]':'[ОТКРЫТЬ ▼]';}
+function playerCard(p){
+  const leg=(LEGENDS[p.id]||[]).map(([k,v])=>'<div class="leg-row"><span class="leg-key">'+k+'</span><span class="leg-val">'+v+'</span></div>').join('');
+  return '<div class="pcard '+p.id+'"><div class="ptop"><div class="char-wrap"><canvas id="cv-'+p.id+'" width="48" height="48" style="image-rendering:pixelated;display:block"></canvas></div><div><div class="pname">'+p.name+'</div><div class="pteam">// '+p.team+'</div><div class="pclass">'+p.class+'</div></div></div><div class="xp-wrap"><div class="xp-lbl"><span>XP ПРОГРЕСС</span><span>LVL '+p.level+'</span></div><div class="xp-bar"><div class="xp-fill" style="width:'+p.xp+'%"></div></div></div><button class="leg-btn" onclick="toggleLeg(this)"><span>ЛЕГЕНДА ПЕРСОНАЖА</span><span>▼</span></button><div class="leg-body">'+leg+'</div></div>';
+}
+function digestBlock(p){
+  const achs=(p.achievements||[]).map(a=>'<div class="ach"><div class="ach-t">'+a.title+'</div><div class="ach-d">'+a.desc+'</div>'+(a.xp?'<span class="xp-tag">+'+a.xp+' XP</span>':'')+'</div>').join('');
+  return '<div class="dsec '+p.id+'"><div class="dhdr"><div class="dicon">'+(ICON[p.id]||'⚪')+'</div><div><div class="dname">'+p.name+'</div><div class="drole">// '+p.team+' · '+(p.class||'')+'</div></div></div><div class="achs">'+achs+'</div></div>';
+}
+function archiveItem(w){
+  const entries=w.players.map(p=>{
+    const achs=(p.achievements||[]).map(a=>'<div class="arc-ach"><div class="arc-ach-t">'+a.title+'</div><div class="arc-ach-d">'+a.desc+'</div></div>').join('');
+    return '<div class="arc-entry"><div class="arc-who">'+(ICON[p.id]||'⚪')+' '+p.name+' // '+p.team+'</div>'+achs+'</div>';
+  }).join('');
+  return '<div><div class="arc-item" onclick="toggleArc(this)"><span class="arc-lbl">ДАЙДЖЕСТ #'+w.number+' · '+w.dates+'</span><span class="arc-tag">[ОТКРЫТЬ ▼]</span></div><div class="arc-body">'+entries+'</div></div>';
+}
+function render(data){
+  const c=data.current;
+  document.getElementById('app').innerHTML=
+    '<div class="hdr"><div class="team">PITERSTORY TEAM</div><div class="title">ИИ РАЗ, ИИ ДВА,<br>ИИ РАЗ-РАЗ-РАЗ</div><div class="sub">// ЕЖЕНЕДЕЛЬНЫЙ ДАЙДЖЕСТ <span class="blink">_</span></div></div>'+
+    '<div class="divider"></div>'+
+    '<div style="text-align:center;margin-bottom:.5rem"><span class="badge">ДАЙДЖЕСТ #'+c.number+' · '+c.dates+'</span></div>'+
+    '<div class="stats"><div class="stat"><span class="stat-n">'+c.stats.tasks+'</span><div class="stat-l">задач закрыто</div></div><div class="stat"><span class="stat-n">'+c.stats.saved+'</span><div class="stat-l">сэкономлено</div></div><div class="stat"><span class="stat-n">'+c.stats.players+'</span><div class="stat-l">игрока в деле</div></div><div class="stat"><span class="stat-n">'+c.stats.potential+'</span><div class="stat-l">потенциал</div></div></div>'+
+    '<div class="sec-title">ИГРОКИ</div>'+
+    '<div class="pgrid">'+c.players.map(playerCard).join('')+'</div>'+
+    '<div class="divider"></div>'+
+    '<div style="text-align:center;margin-bottom:1.25rem"><span style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--muted)">// ЧТО СДЕЛАЛИ НА ЭТОЙ НЕДЕЛЕ</span></div>'+
+    c.players.map(digestBlock).join('')+
+    '<div class="divider"></div>'+
+    '<div class="sec-title">АРХИВ</div>'+
+    '<div class="arc-list">'+(data.archive||[]).map(archiveItem).join('')+'</div>'+
+    '<div class="footer"><span>PITERSTORY TEAM</span> · ИИ РАЗ, ИИ ДВА · обновляется каждую неделю<br><span style="color:var(--muted);font-size:13px">сделано с ♥ и нейросетями · 2025</span></div>';
+  c.players.forEach(p=>{const sp=SPRITES[p.id];if(!sp)return;const cv=document.getElementById('cv-'+p.id);if(cv)drawSprite(cv,sp.px,sp.p);});
+}
+fetch('data.json').then(r=>r.json()).then(render).catch(()=>{document.getElementById('app').innerHTML='<div style="text-align:center;padding:3rem;color:#ff006e;font-family:\'Press Start 2P\',monospace;font-size:9px">Ошибка загрузки data.json</div>';});
 </script>
 </body>
 </html>
