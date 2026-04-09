@@ -24,24 +24,30 @@
   .stat-n{font-family:'Press Start 2P',monospace;font-size:18px;color:var(--yellow);display:block}
   .stat-l{font-size:14px;color:var(--muted);margin-top:4px}
   .sec-title{font-family:'Press Start 2P',monospace;font-size:10px;color:var(--yellow);margin:2rem 0 1rem;display:flex;align-items:center;gap:10px}
-  .sec-title::before{content:'\25BA'}
+  .sec-title::before{content:'▶'}
   .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px;margin-bottom:2rem}
   .pcard{background:var(--surface);border:1px solid var(--border);padding:1.25rem}
-  .pcard.liza{border-top:3px solid var(--pink)}.pcard.ilya{border-top:3px solid var(--blue)}.pcard.lena{border-top:3px solid var(--lena)}
+  .pcard.liza{border-top:3px solid var(--pink)}
+  .pcard.ilya{border-top:3px solid var(--blue)}
+  .pcard.lena{border-top:3px solid var(--lena)}
   .ptop{display:flex;align-items:center;gap:14px;margin-bottom:1rem}
   .char-wrap{width:56px;height:56px;flex-shrink:0;border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
   .pcard.liza .char-wrap{border-color:rgba(255,0,110,.4);background:rgba(255,0,110,.06)}
   .pcard.ilya .char-wrap{border-color:rgba(0,207,255,.4);background:rgba(0,207,255,.06)}
   .pcard.lena .char-wrap{border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.06)}
   .pname{font-family:'Press Start 2P',monospace;font-size:10px;margin-bottom:4px}
-  .pcard.liza .pname{color:var(--pink)}.pcard.ilya .pname{color:var(--blue)}.pcard.lena .pname{color:var(--lena)}
+  .pcard.liza .pname{color:var(--pink)}
+  .pcard.ilya .pname{color:var(--blue)}
+  .pcard.lena .pname{color:var(--lena)}
   .pteam{font-size:14px;color:var(--muted);margin-bottom:6px}
   .pclass{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--yellow);background:rgba(255,204,0,.08);border:1px solid rgba(255,204,0,.25);padding:3px 7px;display:inline-block}
   .xp-wrap{margin:10px 0}
   .xp-lbl{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:4px}
   .xp-bar{height:6px;background:var(--border)}
   .xp-fill{height:100%;animation:xpg 1.2s ease-out forwards}
-  .pcard.liza .xp-fill{background:var(--pink)}.pcard.ilya .xp-fill{background:var(--blue)}.pcard.lena .xp-fill{background:var(--lena)}
+  .pcard.liza .xp-fill{background:var(--pink)}
+  .pcard.ilya .xp-fill{background:var(--blue)}
+  .pcard.lena .xp-fill{background:var(--lena)}
   @keyframes xpg{from{width:0}}
   .leg-btn{font-family:'Press Start 2P',monospace;font-size:7px;color:var(--muted);cursor:pointer;border:1px solid var(--border);background:none;padding:5px 10px;margin-top:6px;width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;transition:border-color .15s,color .15s}
   .leg-btn:hover{color:var(--text);border-color:var(--muted)}
@@ -64,9 +70,13 @@
   .drole{font-size:13px;color:var(--muted);margin-top:2px}
   .achs{display:flex;flex-direction:column;gap:8px}
   .ach{background:var(--bg);border-left:3px solid;padding:.7rem .9rem}
-  .dsec.liza .ach{border-color:var(--pink)}.dsec.ilya .ach{border-color:var(--blue)}.dsec.lena .ach{border-color:var(--lena)}
+  .dsec.liza .ach{border-color:var(--pink)}
+  .dsec.ilya .ach{border-color:var(--blue)}
+  .dsec.lena .ach{border-color:var(--lena)}
   .ach-t{font-family:'Press Start 2P',monospace;font-size:8px;margin-bottom:5px;line-height:1.7}
-  .dsec.liza .ach-t{color:var(--pink)}.dsec.ilya .ach-t{color:var(--blue)}.dsec.lena .ach-t{color:var(--lena)}
+  .dsec.liza .ach-t{color:var(--pink)}
+  .dsec.ilya .ach-t{color:var(--blue)}
+  .dsec.lena .ach-t{color:var(--lena)}
   .ach-d{font-size:16px;color:var(--text);opacity:.85;line-height:1.4}
   .xp-tag{display:inline-block;font-family:'Press Start 2P',monospace;font-size:7px;background:var(--yellow);color:#000;padding:3px 8px;margin-top:6px}
   .arc-list{display:flex;flex-direction:column;gap:6px}
@@ -108,42 +118,57 @@ const LEGENDS={
   lena:[['КЛАСС','Визуал-юниор — изучает как делать крутые визуалы с ИИ и автоматизировать всё что можно нарисовать'],['СКИЛЛ','Figma + AI-генерация: визуалы для сайта и соцсетей агентства без боли и без фрилансеров'],['ФРАКЦИЯ','Визуальный цех — красота в каждом пикселе, скорость в каждом дедлайне'],['ДЕВИЗ','«Раньше это занимало день. Теперь — промпт и кофе.»']]
 };
 const ICON={liza:'🔴',ilya:'🔵',lena:'🟣'};
-function toggleLeg(btn){const b=btn.nextElementSibling,o=b.classList.toggle('open');btn.querySelector('span:last-child').textContent=o?'▲':'▼';}
-function toggleArc(el){const b=el.nextElementSibling,o=b.classList.toggle('open');el.querySelector('.arc-tag').textContent=o?'[ЗАКРЫТЬ ▲]':'[ОТКРЫТЬ ▼]';}
+
 function playerCard(p){
-  const leg=(LEGENDS[p.id]||[]).map(([k,v])=>'<div class="leg-row"><span class="leg-key">'+k+'</span><span class="leg-val">'+v+'</span></div>').join('');
-  return '<div class="pcard '+p.id+'"><div class="ptop"><div class="char-wrap"><canvas id="cv-'+p.id+'" width="48" height="48" style="image-rendering:pixelated;display:block"></canvas></div><div><div class="pname">'+p.name+'</div><div class="pteam">// '+p.team+'</div><div class="pclass">'+p.class+'</div></div></div><div class="xp-wrap"><div class="xp-lbl"><span>XP ПРОГРЕСС</span><span>LVL '+p.level+'</span></div><div class="xp-bar"><div class="xp-fill" style="width:'+p.xp+'%"></div></div></div><button class="leg-btn" onclick="toggleLeg(this)"><span>ЛЕГЕНДА ПЕРСОНАЖА</span><span>▼</span></button><div class="leg-body">'+leg+'</div></div>';
+  const leg=(LEGENDS[p.id]||[]).map(([k,v])=>`<div class="leg-row"><span class="leg-key">${k}</span><span class="leg-val">${v}</span></div>`).join('');
+  return`<div class="pcard ${p.id}"><div class="ptop"><div class="char-wrap"><canvas id="cv-${p.id}" width="48" height="48" style="image-rendering:pixelated;display:block"></canvas></div><div><div class="pname">${p.name}</div><div class="pteam">// ${p.team}</div><div class="pclass">${p.class}</div></div></div><div class="xp-wrap"><div class="xp-lbl"><span>XP ПРОГРЕСС</span><span>LVL ${p.level}</span></div><div class="xp-bar"><div class="xp-fill" style="width:${p.xp}%"></div></div></div><button class="leg-btn" onclick="toggleLeg(this)"><span>ЛЕГЕНДА ПЕРСОНАЖА</span><span>▼</span></button><div class="leg-body">${leg}</div></div>`;
 }
+
 function digestBlock(p){
-  const achs=(p.achievements||[]).map(a=>'<div class="ach"><div class="ach-t">'+a.title+'</div><div class="ach-d">'+a.desc+'</div>'+(a.xp?'<span class="xp-tag">+'+a.xp+' XP</span>':'')+'</div>').join('');
-  return '<div class="dsec '+p.id+'"><div class="dhdr"><div class="dicon">'+(ICON[p.id]||'⚪')+'</div><div><div class="dname">'+p.name+'</div><div class="drole">// '+p.team+' · '+(p.class||'')+'</div></div></div><div class="achs">'+achs+'</div></div>';
+  const achs=(p.achievements||[]).map(a=>`<div class="ach"><div class="ach-t">${a.title}</div><div class="ach-d">${a.desc}</div>${a.xp?`<span class="xp-tag">+${a.xp} XP</span>`:''}</div>`).join('');
+  return`<div class="dsec ${p.id}"><div class="dhdr"><div class="dicon">${ICON[p.id]||'⚪'}</div><div><div class="dname">${p.name}</div><div class="drole">// ${p.team} · ${p.class||''}</div></div></div><div class="achs">${achs}</div></div>`;
 }
+
 function archiveItem(w){
   const entries=w.players.map(p=>{
-    const achs=(p.achievements||[]).map(a=>'<div class="arc-ach"><div class="arc-ach-t">'+a.title+'</div><div class="arc-ach-d">'+a.desc+'</div></div>').join('');
-    return '<div class="arc-entry"><div class="arc-who">'+(ICON[p.id]||'⚪')+' '+p.name+' // '+p.team+'</div>'+achs+'</div>';
+    const achs=(p.achievements||[]).map(a=>`<div class="arc-ach"><div class="arc-ach-t">${a.title}</div><div class="arc-ach-d">${a.desc}</div></div>`).join('');
+    return`<div class="arc-entry"><div class="arc-who">${ICON[p.id]||'⚪'} ${p.name} // ${p.team}</div>${achs}</div>`;
   }).join('');
-  return '<div><div class="arc-item" onclick="toggleArc(this)"><span class="arc-lbl">ДАЙДЖЕСТ #'+w.number+' · '+w.dates+'</span><span class="arc-tag">[ОТКРЫТЬ ▼]</span></div><div class="arc-body">'+entries+'</div></div>';
+  return`<div><div class="arc-item" onclick="toggleArc(this)"><span class="arc-lbl">ДАЙДЖЕСТ #${w.number} · ${w.dates}</span><span class="arc-tag">[ОТКРЫТЬ ▼]</span></div><div class="arc-body">${entries}</div></div>`;
 }
+
 function render(data){
   const c=data.current;
-  document.getElementById('app').innerHTML=
-    '<div class="hdr"><div class="team">PITERSTORY TEAM</div><div class="title">ИИ РАЗ, ИИ ДВА,<br>ИИ РАЗ-РАЗ-РАЗ</div><div class="sub">// ЕЖЕНЕДЕЛЬНЫЙ ДАЙДЖЕСТ <span class="blink">_</span></div></div>'+
-    '<div class="divider"></div>'+
-    '<div style="text-align:center;margin-bottom:.5rem"><span class="badge">ДАЙДЖЕСТ #'+c.number+' · '+c.dates+'</span></div>'+
-    '<div class="stats"><div class="stat"><span class="stat-n">'+c.stats.tasks+'</span><div class="stat-l">задач закрыто</div></div><div class="stat"><span class="stat-n">'+c.stats.saved+'</span><div class="stat-l">сэкономлено</div></div><div class="stat"><span class="stat-n">'+c.stats.players+'</span><div class="stat-l">игрока в деле</div></div><div class="stat"><span class="stat-n">'+c.stats.potential+'</span><div class="stat-l">потенциал</div></div></div>'+
-    '<div class="sec-title">ИГРОКИ</div>'+
-    '<div class="pgrid">'+c.players.map(playerCard).join('')+'</div>'+
-    '<div class="divider"></div>'+
-    '<div style="text-align:center;margin-bottom:1.25rem"><span style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--muted)">// ЧТО СДЕЛАЛИ НА ЭТОЙ НЕДЕЛЕ</span></div>'+
-    c.players.map(digestBlock).join('')+
-    '<div class="divider"></div>'+
-    '<div class="sec-title">АРХИВ</div>'+
-    '<div class="arc-list">'+(data.archive||[]).map(archiveItem).join('')+'</div>'+
-    '<div class="footer"><span>PITERSTORY TEAM</span> · ИИ РАЗ, ИИ ДВА · обновляется каждую неделю<br><span style="color:var(--muted);font-size:13px">сделано с ♥ и нейросетями · 2025</span></div>';
+  document.getElementById('app').innerHTML=`
+    <div class="hdr"><div class="team">PITERSTORY TEAM</div><div class="title">ИИ РАЗ, ИИ ДВА,<br>ИИ РАЗ-РАЗ-РАЗ</div><div class="sub">// ЕЖЕНЕДЕЛЬНЫЙ ДАЙДЖЕСТ <span class="blink">_</span></div></div>
+    <div class="divider"></div>
+    <div style="text-align:center;margin-bottom:.5rem"><span class="badge">ДАЙДЖЕСТ #${c.number} · ${c.dates}</span></div>
+    <div class="stats">
+      <div class="stat"><span class="stat-n">${c.stats.tasks}</span><div class="stat-l">задач закрыто</div></div>
+      <div class="stat"><span class="stat-n">${c.stats.saved}</span><div class="stat-l">сэкономлено</div></div>
+      <div class="stat"><span class="stat-n">${c.stats.players}</span><div class="stat-l">игрока в деле</div></div>
+      <div class="stat"><span class="stat-n">${c.stats.potential}</span><div class="stat-l">потенциал</div></div>
+    </div>
+    <div class="sec-title">ИГРОКИ</div>
+    <div class="pgrid">${c.players.map(playerCard).join('')}</div>
+    <div class="divider"></div>
+    <div style="text-align:center;margin-bottom:1.25rem"><span style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--muted)">// ЧТО СДЕЛАЛИ НА ЭТОЙ НЕДЕЛЕ</span></div>
+    ${c.players.map(digestBlock).join('')}
+    <div class="divider"></div>
+    <div class="sec-title">АРХИВ</div>
+    <div class="arc-list">${(data.archive||[]).map(archiveItem).join('')}</div>
+    <div class="footer"><span>PITERSTORY TEAM</span> · ИИ РАЗ, ИИ ДВА · обновляется каждую неделю<br><span style="color:var(--muted);font-size:13px">сделано с ❤ и нейросетями · 2025</span></div>
+  `;
   c.players.forEach(p=>{const sp=SPRITES[p.id];if(!sp)return;const cv=document.getElementById('cv-'+p.id);if(cv)drawSprite(cv,sp.px,sp.p);});
 }
-fetch('data.json').then(r=>r.json()).then(render).catch(()=>{document.getElementById('app').innerHTML='<div style="text-align:center;padding:3rem;color:#ff006e;font-family:\'Press Start 2P\',monospace;font-size:9px">Ошибка загрузки data.json</div>';});
+
+function toggleLeg(btn){const b=btn.nextElementSibling,o=b.classList.toggle('open');btn.querySelector('span:last-child').textContent=o?'▲':'▼';}
+function toggleArc(el){const b=el.nextElementSibling,o=b.classList.toggle('open');el.querySelector('.arc-tag').textContent=o?'[ЗАКРЫТЬ ▲]':'[ОТКРЫТЬ ▼]';}
+
+fetch('data.json')
+  .then(r=>r.json())
+  .then(render)
+  .catch(()=>{document.getElementById('app').innerHTML='<div style="text-align:center;padding:3rem;color:#ff006e;font-family:\'Press Start 2P\',monospace;font-size:9px">ОШИБКА ЗАГРУЗКИ data.json<br><br>Убедись что файл data.json<br>лежит рядом с index.html</div>';});
 </script>
 </body>
 </html>
